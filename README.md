@@ -85,13 +85,13 @@ NOTE: Be sure to pull the latest from "upstream" before making a pull request!
 [ubuntu]: https://www.ubuntu.com/server
 [azure-portal]: https://portal.azure.com
 [vs]: https://visualstudio.microsoft.com/vs/community/
-[git-repo]: https://github.com/vijayshinva/AzureWireGuard
+[git-repo]: https://github.com/yagmurs/AzureWireGuard
 [azure-ps]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy
 [azure-cli]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-cli
 [azure-rest]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-rest
 [azure-deploy]: azuredeploy.net
 [azure-portal]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal
-[azure-deploy-awg]: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvijayshinva%2FAzureWireGuard%2Fmaster%2FAzureWireGuard%2FLinuxVirtualMachine.json
+[azure-deploy-awg]: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyagmurs%2FAzureWireGuard%2Fmaster%2FAzureWireGuard%2FLinuxVirtualMachine.json
 [azure-rg]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups
 [ufw]: https://help.ubuntu.com/community/UFW
 [azure-accelerated-nw]: https://docs.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli
