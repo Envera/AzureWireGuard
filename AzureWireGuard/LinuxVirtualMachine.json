@@ -18,7 +18,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/yagmurs/AzureWireGuard/master/AzureWireGuard",
+	  "defaultValue": "https://raw.githubusercontent.com/yagmurs/AzureWireGuard/master/AzureWireGuard",
       "metadata": {
         "description": "Auto-generated container in staging storage account to receive post-build staging folder upload"
       }
@@ -41,6 +41,19 @@
     "AzureWireGuardScriptFileName": "AzureWireGuard.sh"
   },
   "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('resourceName')]",
+      "apiVersion": "2018-07-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "displayName": "StorageAccount"
+      },
+      "sku": {
+        "name": "[variables('diagnosticsStorageType')]"
+      },
+      "kind": "Storage"
+    },
     {
       "apiVersion": "2018-01-01",
       "type": "Microsoft.Network/networkSecurityGroups",
@@ -215,11 +228,13 @@
             "settings": {
               "skipDos2Unix": false,
               "fileUris": [
-                "[concat(parameters('_artifactsLocation'), '/', variables('AzureWireGuardScriptFolder'), '/', variables('AzureWireGuardScriptFileName'))]"
+                "[concat(parameters('_artifactsLocation'), '/', variables('AzureWireGuardScriptFolder'), '/', variables('AzureWireGuardScriptFileName'), parameters('_artifactsLocationSasToken'))]"
               ],
               "commandToExecute": "[concat('bash ', variables('AzureWireGuardScriptFileName'), ' ', reference(resourceId('Microsoft.Network/publicIPAddresses', variables('resourceName'))).dnsSettings.fqdn, ' ', parameters('adminUsername'))]"
             }
           }
         }
+       ]
+    }
   ]
 }
