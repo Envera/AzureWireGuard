@@ -60,7 +60,7 @@ Some knowledge of how [Azure ARM templates][azure-arm] work is really helpful. A
 
     Example: 
 
-	scp vmadmin@awgyj5lzwixbj3ng.westus.cloudapp.azure.com:/home/vmadmin/wg0-client* /local/dir/
+	scp vmadmin@<vm_name>.<region>.cloudapp.azure.com:/home/vmadmin/wg0-client* /Downloads/wg/
 
 # Windows Clients
 - The client configuration files generated have Linux Line Endings (LF) while Windows WireGuard clients would expect DOS Line Endings (CRLF).
@@ -69,7 +69,6 @@ Some knowledge of how [Azure ARM templates][azure-arm] work is really helpful. A
 - Recommended to have a separate [Azure Resource Group][azure-rg] for this deployment so that when you want to destroy the setup you can easily delete the Azure Resource Group and all the associated Azure resources are removed.
 - Recommended to have a VM with atleast two cores.
 - Once the configuration files are downloaded, you can disable the SSH port 22 on the Azure Network Security Group for added security.
-- [Azure Accelerated Networking][azure-accelerated-nw] is enabled by default for better network performance, this limits the choice of Azure VM sizes.
 
 # Contributing
 - Fork the repo on [GitHub][git-repo]
