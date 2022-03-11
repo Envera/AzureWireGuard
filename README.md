@@ -54,13 +54,13 @@ Some knowledge of how [Azure ARM templates][azure-arm] work is really helpful. A
 - They are located in the administrator users home folder (~/).
 - You can use tools like scp and pscp to download the client configuration files directly from the server.
     
-    scp &lt;admin-user&gt;@&lt;server-fqdn&gt;:/home/&lt;admin-user&gt;/wg0-client-1.conf /local/dir/
+    scp &lt;admin-user&gt;@&lt;server-fqdn&gt;:/home/&lt;admin-user&gt;/wg0-client-1.conf /Downloads/wg/
     
     pscp &lt;admin-user&gt;@&lt;server-fqdn&gt;:/home/&lt;admin-user&gt;/wg0-client-1.conf c:\local\
 
     Example: 
 
-	scp vmadmin@<vm_name>.<region>.cloudapp.azure.com:/home/vmadmin/wg0-client* /Downloads/wg/
+	scp vmadmin@vmname.westeurope.cloudapp.azure.com:/home/vmadmin/wg0-client* /Downloads/wg/
 
 # Windows Clients
 - The client configuration files generated have Linux Line Endings (LF) while Windows WireGuard clients would expect DOS Line Endings (CRLF).
