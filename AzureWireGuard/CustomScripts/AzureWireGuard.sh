@@ -61,7 +61,7 @@ client_ten_public_key=$(</home/$2/WireGuardSecurityKeys/client_ten_public_key)
 # Server Config
 cat > /etc/wireguard/wg0.conf << EOF
 [Interface]
-Address = 172.16.254.1/24
+Address = 192.168.255.1/24
 SaveConfig = true
 PrivateKey = $server_private_key
 ListenPort = 443
@@ -71,59 +71,59 @@ PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING 
 [Peer]
 PublicKey =  $client_one_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.101/32
+AllowedIps = 192.168.255.101/32
 
 [Peer]
 PublicKey =  $client_two_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.102/32
+AllowedIps = 192.168.255.102/32
 
 [Peer]
 PublicKey =  $client_three_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.103/32
+AllowedIps = 192.168.255.103/32
 
 [Peer]
 PublicKey =  $client_four_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.104/32
+AllowedIps = 192.168.255.104/32
 
 [Peer]
 PublicKey =  $client_five_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.105/32
+AllowedIps = 192.168.255.105/32
 
 [Peer]
 PublicKey =  $client_six_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.106/32
+AllowedIps = 192.168.255.106/32
 
 [Peer]
 PublicKey =  $client_seven_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.107/32
+AllowedIps = 192.168.255.107/32
 
 [Peer]
 PublicKey =  $client_eight_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.108/32
+AllowedIps = 192.168.255.108/32
 
 [Peer]
 PublicKey =  $client_nine_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.109/32
+AllowedIps = 192.168.255.109/32
 
 [Peer]
 PublicKey =  $client_ten_public_key
 PresharedKey = $preshared_key
-AllowedIps = 172.16.254.110/32
+AllowedIps = 192.168.255.110/32
 EOF
 
 # Client Configs
 cat > /home/$2/wg0-client-1.conf << EOF
 [Interface]
 PrivateKey = $client_one_private_key
-Address = 172.16.254.101/32
+Address = 192.168.255.101/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -140,7 +140,7 @@ chmod go+r /home/$2/wg0-client-1.conf
 cat > /home/$2/wg0-client-2.conf << EOF
 [Interface]
 PrivateKey = $client_two_private_key
-Address = 172.16.254.102/32
+Address = 192.168.255.102/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -157,7 +157,7 @@ chmod go+r /home/$2/wg0-client-2.conf
 cat > /home/$2/wg0-client-3.conf << EOF
 [Interface]
 PrivateKey = $client_three_private_key
-Address = 172.16.254.103/32
+Address = 192.168.255.103/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -174,7 +174,7 @@ chmod go+r /home/$2/wg0-client-3.conf
 cat > /home/$2/wg0-client-4.conf << EOF
 [Interface]
 PrivateKey = $client_four_private_key
-Address = 172.16.254.104/32
+Address = 192.168.255.104/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -191,7 +191,7 @@ chmod go+r /home/$2/wg0-client-4.conf
 cat > /home/$2/wg0-client-5.conf << EOF
 [Interface]
 PrivateKey = $client_five_private_key
-Address = 172.16.254.105/32
+Address = 192.168.255.105/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -208,7 +208,7 @@ chmod go+r /home/$2/wg0-client-5.conf
 cat > /home/$2/wg0-client-6.conf << EOF
 [Interface]
 PrivateKey = $client_six_private_key
-Address = 172.16.254.106/32
+Address = 192.168.255.106/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -225,7 +225,7 @@ chmod go+r /home/$2/wg0-client-6.conf
 cat > /home/$2/wg0-client-7.conf << EOF
 [Interface]
 PrivateKey = $client_seven_private_key
-Address = 172.16.254.107/32
+Address = 192.168.255.107/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -242,7 +242,7 @@ chmod go+r /home/$2/wg0-client-7.conf
 cat > /home/$2/wg0-client-8.conf << EOF
 [Interface]
 PrivateKey = $client_eight_private_key
-Address = 172.16.254.108/32
+Address = 192.168.255.108/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -259,7 +259,7 @@ chmod go+r /home/$2/wg0-client-8.conf
 cat > /home/$2/wg0-client-9.conf << EOF
 [Interface]
 PrivateKey = $client_nine_private_key
-Address = 172.16.254.109/32
+Address = 192.168.255.109/32
 DNS = 1.1.1.1
 
 [Peer]
@@ -276,7 +276,7 @@ chmod go+r /home/$2/wg0-client-9.conf
 cat > /home/$2/wg0-client-10.conf << EOF
 [Interface]
 PrivateKey = $client_ten_private_key
-Address = 172.16.254.110/32
+Address = 192.168.255.110/32
 DNS = 1.1.1.1
 
 [Peer]
