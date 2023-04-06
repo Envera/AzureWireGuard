@@ -18,7 +18,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-	  "defaultValue": "https://raw.githubusercontent.com/yagmurs/AzureWireGuard/master/AzureWireGuard",
+	  "defaultValue": "https://raw.githubusercontent.com/envera/AzureWireGuard/master/AzureWireGuard",
       "metadata": {
         "description": "Auto-generated container in staging storage account to receive post-build staging folder upload"
       }
